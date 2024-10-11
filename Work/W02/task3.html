@@ -1,0 +1,63 @@
+<html>
+    <title>
+        W02: Task3
+    </title>
+    <body>
+        <script src="vec3.js" ></script>
+        <form>
+            <label>v0</label>
+            <input type="number" id="x0" value="0"/>
+            <input type="number" id="y0" value="0"/>
+            <input type="number" id="z0" value="0"/>
+        </form>
+        <form>
+            <label>v1</label>
+            <input type="number" id="x1" value="0"/>
+            <input type="number" id="y1" value="0"/>
+            <input type="number" id="z1" value="0"/>
+        </form>
+        <form>
+            <label>v2</label>
+            <input type="number" id="x2" value="0"/>
+            <input type="number" id="y2" value="0"/>
+            <input type="number" id="z2" value="0"/>
+        </form>
+            <label for="result">Result</label>
+            <input type="text" id="result">
+            <button id="button" value="calculate" id="calculate">Calculate</button>
+        <script>
+            var x0, y0, z0; // (input vertex 0)
+            var x1, y1, z1; // (input vertex 1)
+            var x2, y2, z2; // (input vertex 2)
+
+            button.addEventListener("click", function(e)
+            {
+                e.preventDefault();
+                x0 = parseFloat(document.getElementById("x0").value, 10);
+                y0 = parseFloat(document.getElementById("y0").value, 10);
+                z0 = parseFloat(document.getElementById("z0").value, 10);
+
+                x1 = parseFloat(document.getElementById("x1").value, 10);
+                y1 = parseFloat(document.getElementById("y1").value, 10);
+                z1 = parseFloat(document.getElementById("z1").value, 10);
+
+                x2 = parseFloat(document.getElementById("x2").value, 10);
+                y2 = parseFloat(document.getElementById("y2").value, 10);
+                z2 = parseFloat(document.getElementById("z2").value, 10);
+
+                var v0 = new Vec3(x0, y0, z0);
+                var v1 = new Vec3(x1, y1, z1);
+                var v2 = new Vec3(x2, y2, z2);
+
+                var v10 = v1.sub(v0);
+                var v20 = v2.sub(v0);
+
+                var crossv = v10.cross(v20);
+
+                var result = document.getElementById("result");
+                result.value = crossv.len() * 0.5;
+            });
+            
+        </script>
+    </body>
+</html>

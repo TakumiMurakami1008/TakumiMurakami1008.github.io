@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>W04: Task02</title>
+    </head>
+    <body>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script>
+            var svg = d3.select("body").append("svg");
+            var text_x = 15;
+            var padding = 10;
+            var height = 20;
+            d3.csv("https://TakumiMurakami1008.github.io/Work/W04/w04_task02.csv",
+                   function(data){
+                    svg.selectAll("rect")
+                       .data(data)
+                       .enter()
+                       .append("text")
+                       .text(function(d){return d.label;})
+                       .attr("x", text_x)
+                       .attr("y", function(d,i){return padding + i * (height + padding)+17;})
+
+                    svg.selectAll("rect")
+                       .data(data)
+                       .enter()
+                       .append("rect")
+                       .attr("x", text_x+padding+10)
+                       .attr("y", function(d,i){return padding + i * (height + padding);})
+                       .attr("width", function(d){return d.length;})
+                       .attr("height", height)
+                       .style("fill", function(d,i){return d3.rgb(i * 40, 0, 255-(i * 40));});
+                   });
+            
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Final Task</title>
+	<style>
+	 body {
+	     font-family: system-ui;
+	 }
+	 .container {
+	     display: flex;
+	 }
+	 .bar.active {
+	     stroke: #000;
+	 }
+	 #tooltip {
+	     position: absolute;
+	     opacity: 0;
+	     background: #fff;
+	     border: 1px solid #ddd;
+	     font-size: 12px;
+	     font-weight: 600;
+	     padding: 2px 8px;
+	 }
+	 .tooltip-label {
+	     font-weight: 500;
+	     font-size: 11px;
+	     color: #888;
+	 }
+	</style>
+    </head>
+    <body>
+	<h2>Price Index and Annual Income Dataset</h2>
+	<div id="tooltip"></div>
+	<div class="container">
+	    <div>
+			<h2>Scatter Plot</h2>
+			<svg id="drawing_region_scatterplot"></svg>
+			<button type="button" id="clear">Clear</button>
+		</div>
+        <div>
+			<h2>Annual Income Data</h2>
+            <button type="button" id="descend">Descend</button>
+            <button type="button" id="ascend">Ascend</button>
+			<button type="button" id="reset">Reset</button>
+        </div>
+		<div>
+			<svg id="drawing_region_barchart"></svg>
+		</div>
+		<div>
+			<h2>Consumer Price Index Data</h2>
+            <button type="button" id="descend2">Descend</button>
+            <button type="button" id="ascend2">Ascend</button>
+			<button type="button" id="reset2">Reset</button>
+        </div>
+		<div>
+			<svg id="drawing_region_barchart2"></svg>
+		</div>
+	</div>
+	<script src="https://d3js.org/d3.v6.min.js"></script>
+	<script src="Final_ScatterPlot.js"></script>
+	<script src="Final_BarChart.js"></script>
+	<script src="Final_BarChart2.js"></script>
+	<script src="Final_main.js"></script>
+    </body>
+</html>
